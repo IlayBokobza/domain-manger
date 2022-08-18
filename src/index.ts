@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 import fs from "fs"
 
 async function main(){
-    const storage = new Storage(process.env.STORAGE_FILE!)
+    const storage = new Storage(`${process.env.DATA_FOLDER}/domains.json`!)
     const actions = new Actions(storage)
     storage.check()
 
@@ -31,7 +31,7 @@ async function main(){
     let file = ''
 
     domains.forEach(d => {
-        const boilder = new BoilderPlate(process.env.BOILDER_PLATE!)
+        const boilder = new BoilderPlate(`${process.env.DATA_FOLDER}/proxy.txt`)
         boilder.addTitle(d.domain)
         boilder.replaceVariable('domain',d.domain)
         boilder.replaceVariable('port',d.port.toString())

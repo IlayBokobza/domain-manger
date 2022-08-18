@@ -14,6 +14,6 @@ export async function ask(msg:string,type:prompts.PromptType = 'text'){
         type,
         name:'value',
         message:msg,
-        validate: v => v ? true : "Don't input an empty string"
+        validate: v => v ? true : "Don't input an empty value"
     })
 }

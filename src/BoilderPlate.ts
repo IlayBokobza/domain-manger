@@ -15,7 +15,7 @@ export class BoilderPlate{
     }
 
     public addTitle(title:string){
-        const border = Array.from(title).map(_ => '#').join('')
-        this.out = `\n${border}\n${title}\n${border}\n${this.out}`
+        const border = new Array(title.length + 6).fill("#").join('')
+        this.out = `\n${border}\n## ${title} ##\n${border}\n${this.out}`
     }
 }
